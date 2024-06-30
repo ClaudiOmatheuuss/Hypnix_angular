@@ -1,0 +1,25 @@
+.example-spacer { flex: 1 1 auto; }
+
+span { padding: 10px; }
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.more-options button { font-size: 24px; }
+
+.link-item { display: none; }
+
+.link-mobile { padding: 0; }
+
+@media screen and (min-width: 769px) {
+    .more-options { display: none; }
+
+    .link-item { display: block; }
+}

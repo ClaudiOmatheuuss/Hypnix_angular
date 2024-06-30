@@ -1,0 +1,20 @@
+<header>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span><a routerLink="inicio"><img src="../../assets/img/logo.png" alt="Logo da Hypnix"></a></span>
+            <span><a class="link-item" routerLink="inicio">Sobre</a></span>
+            <span><a class="link-item" routerLink="inicio">Produtos</a></span>
+            <span><a class="link-item" routerLink="inicio">Contato</a></span>
+            <div class="more-options">
+                <button mat-button [matMenuTriggerFor]="menu"><img src="../../assets/img/hamburger-icon.svg" alt=""></button>
+                <mat-menu #menu="matMenu">
+                    <span class="link-mobile"><a mat-menu-item routerLink="inicio">Sobre</a></span>
+                    <span class="link-mobile"><a mat-menu-item routerLink="inicio">Produtos</a></span>
+                    <span class="link-mobile"><a mat-menu-item routerLink="inicio">Contato</a></span>
+                </mat-menu>
+            </div>
+            <span class="example-spacer"></span>
+            <span><a routerLink="login">Login</a></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</header>
