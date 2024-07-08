@@ -1,0 +1,35 @@
+main {
+    background-image: url("../../../assets/img/bg_prod.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+}
+
+form {
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 20px;
+    height: 400px;
+    width: 300px;
+}
+
+form h2 { color: whitesmoke; }
+
+input {
+    border-radius: 15px;
+    padding: 12px;
+}
+
+button {
+    background-color: transparent;
+    font-weight: bold;
+    height: 50px;
+}
+
+@media screen and (min-width: 1201px) { main { height: 100%; } }

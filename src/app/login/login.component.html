@@ -1,19 +1,51 @@
-<main>
-    <section id=“section-login”>
-        <form class="row g-3">
-            <h2>Login</h2>
-            
-            <label for="staticEmail2" class="visually-hidden">Usuário</label>
-            <input type="email" class="form-control" id="staticUsuario" placeholder="email@dominio.com" required>
+<section id="section-form" class="flip-container">
+  <div class="flip-container">
+    <div class="flipper" [class.flipped]="flipped">
 
-            <br>
+      <div class="front">
 
-            <label for="inputPassword2" class="visually-hidden">Senha</label>
-            <input type="password" class="form-control" id="inputPassword2" placeholder="Senha" required>
+        <form id="form-login" class="row g-3 login-form" (ngSubmit)="fazerLogin()">
 
-            <br>
+          <h2>Login</h2>
 
-            <button type="submit" class="btn btn-primary mb-3">Entrar</button>
+          <label for="staticUsuarioLogin" class="visually-hidden">Usuário</label>
+          <input type="email" class="form-control" name="usuario" id="staticUsuarioLogin"
+            placeholder="email@dominio.com" required [(ngModel)]="usuarioLogin">
+          <br>
+
+          <label for="inputPassword2" class="visually-hidden">Senha</label>
+          <input type="password" class="form-control" name="senha" id="inputPassword2" placeholder="Senha" required
+            [(ngModel)]="senhaLogin">
+          <br>
+
+          <button type="submit" id="btn_submit_login" class="btn btn-primary mb-3">Entrar</button>
+
+          <button type="button" (click)="toggleFlip()" class="btn btn-danger mb-3">Ir para Cadastro</button>
         </form>
-    </section>
-</main>
+      </div>
+
+      <div class="back">
+
+        <form id="form-cadastro" class="row g-3 cadastro-form" (ngSubmit)="cadastrar()">
+
+          <h2>Cadastro</h2>
+
+          <label for="staticUsuarioCadastro" class="visually-hidden">Usuário</label>
+          <input type="email" class="form-control" name="usuario" id="staticUsuarioCadastro"
+            placeholder="email@dominio.com" required [(ngModel)]="usuarioCadastro">
+
+          <br>
+
+          <label for="inputPasswordCadastro" class="visually-hidden">Senha</label>
+          <input type="password" class="form-control" name="senha" id="inputPasswordCadastro" placeholder="Senha"
+            required [(ngModel)]="senhaCadastro">
+
+          <br>
+
+          <button type="submit" id="btn_submit_cadastro" class="btn btn-primary mb-3">Cadastrar</button>
+          <button type="button" (click)="toggleFlip()" class="btn btn-danger mb-3">Ir para Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

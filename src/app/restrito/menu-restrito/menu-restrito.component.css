@@ -1,0 +1,25 @@
+.example-spacer { flex: 1 1 auto; }
+
+#menu-mobile { margin: 0 auto; }
+
+mat-toolbar-row { 
+    display: none;
+    flex-wrap: wrap;
+}
+
+span { padding: 5px 5px; }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+}
+
+@media screen and (min-width: 500px) {
+    #menu-mobile{ display: none; } 
+    mat-toolbar-row { display: flex; }
+}

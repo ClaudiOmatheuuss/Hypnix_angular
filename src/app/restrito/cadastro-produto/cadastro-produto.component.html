@@ -1,0 +1,25 @@
+<main>
+    <section id="section-cadastro">
+        <form class="row g-3">
+            <h2>Cadastrar Produto</h2>
+
+            <label for="produto" class="visually-hidden">Nome do Produto</label>
+            <input type="text" class="form-control" name="produto" [(ngModel)]="produto.produto"
+                placeholder="Nome do produto">
+
+            <br>
+
+            <label for="foto" class="visually-hidden">Foto</label>
+            <input type="text" class="form-control" name="foto" [(ngModel)]="produto.foto" placeholder="URL da foto">
+            <br>
+
+            <label for="preco" class="visually-hidden">Preço</label>
+            <input type="number" class="form-control" name="preco" [(ngModel)]="produto.preco"
+                placeholder="Preço do produto">
+
+            <br>
+
+            <button type="button" class="btn btn-primary mb-3" (click)="cadastrar()">Cadastrar</button>
+        </form>
+    </section>
+</main>

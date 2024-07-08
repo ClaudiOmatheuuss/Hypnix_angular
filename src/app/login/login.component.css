@@ -1,15 +1,13 @@
 section {
-    /* background-image: url("https://content.r9cdn.net/rimg/dimg/38/93/de70f3b4-city-20339-551a6f73.jpg?crop=true&width=1020&height=498"); */
     background-image: url("../../assets/img/banner1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 700px;
+    padding-top: 7.5rem;
 }
 
 form {
+    color: white;
     align-items: center;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(4px);
@@ -18,9 +16,8 @@ form {
     padding: 10px 20px;
     height: 400px;
     width: 300px;
+    margin: 0 auto;
 }
-
-form h2 { color: whitesmoke; }
 
 input {
     border-radius: 15px;
@@ -33,6 +30,36 @@ button {
     height: 50px;
 }
 
+.flip-container {
+    perspective: 1000px;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipper.flipped {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
 @media screen and (min-width: 1201px) {
-    main { height: 100%; }
+    main {
+        height: 100%;
+    }
 }

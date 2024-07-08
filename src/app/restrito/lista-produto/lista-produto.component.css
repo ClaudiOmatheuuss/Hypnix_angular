@@ -1,0 +1,43 @@
+table img {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+}
+
+thead {
+    display: none;
+}
+
+tbody {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (min-width:769px) {
+    thead { display: block; }
+    
+    thead tr {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+
+    .item {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: normal;
+        width: 100%;
+    }
+}

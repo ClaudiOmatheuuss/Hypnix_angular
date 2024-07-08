@@ -17,7 +17,8 @@
 
                 <div class="carousel-item active">
 
-                    <img src="../../assets/img/banner1.jpg" class="d-block w-100" alt="Banner com imagem detalhes em tons de azul e roxa bem futurística">
+                    <img src="../../assets/img/banner1.jpg" class="d-block w-100"
+                        alt="Banner com imagem detalhes em tons de azul e roxa bem futurística">
                 </div>
 
                 <div class="carousel-item">
@@ -41,10 +42,12 @@
                 </div>
                 <div class="carousel-item" data-bs-interval="9100">
 
-                    <video preload="auto" muted autoplay loop playsinline webkit-playsinline poster="../../assets/img/banner4.jpg">
-                        <source type="video/mp4" src="https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/l/la/the-last-of-us-part-ii/videos/the-last-of-us-part-ii-live-video-block-01-ps4-us-23sep19.mp4">
+                    <video preload="auto" muted autoplay loop playsinline webkit-playsinline
+                        poster="../../assets/img/banner4.jpg">
+                        <source type="video/mp4"
+                            src="https://gmedia.playstation.com/is/content/SIEPDC/global_pdc/en/games/pdps/l/la/the-last-of-us-part-ii/videos/the-last-of-us-part-ii-live-video-block-01-ps4-us-23sep19.mp4">
                     </video>
-                    
+
 
                     <div class="carousel-caption d-none d-md-block">
                         <h3 id="video-desc">The last of us part II</h3>
@@ -68,78 +71,31 @@
     </section>
 
     <section id="section-products">
-        <h2>Produtos</h2>
-            <div class="products_list">
+        <div class="section-header">
+            <h2>Produtos</h2>
+            <button *ngIf="!showAll" (click)="verTudo()">
+                <p>Ver tudo</p>
+                <img src="../../assets/img/header-arrow.svg" alt="Flecha que redireciona para ver todos os produtos">
+            </button>
+        </div>
+        <div class="products_list">
+            <mat-card class="mat-mdc-card mdc-card example-card" *ngFor="let produto of produtos | slice:0:(showAll ? produtos.length : 5)">
+                <mat-card-header class="mat-mdc-card-header">
+                    <div class="mat-mdc-card-header-text">
+                        <mat-card-title class="mat-mdc-card-title">{{produto.produto}}</mat-card-title>
+                    </div>
+                </mat-card-header>
+                <img mat-card-image="" src="{{produto.foto}}" alt="Imagem do produto"
+                    class="mat-mdc-card-image mdc-card__media">
 
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>Xícara SW</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="../../assets/img/caneca_st.png" alt="Imagem do produto">
-                    <mat-card-content>
-                        <br>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <p>R$ 300,00</p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>Nintendo Switch</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="../../assets/img/nintendo_switch.png" alt="Imagem do produto">
-                    <mat-card-content>
-                        <br>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <p>R$ 300,00</p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>Xbox Series S</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="../../assets/img/xbox_series_s.png" alt="Imagem do produto">
-                    <mat-card-content>
-                        <br>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <p>R$ 300,00</p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>Playstation 5</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="../../assets/img/console.png" alt="Imagem do produto">
-                    <mat-card-content>
-                        <br>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <p>R$ 300,00</p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>Óculos VR</mat-card-title>
-                    </mat-card-header>
-                    <img mat-card-image src="../../assets/img/oculosvr.png" alt="Imagem do produto">
-                    <mat-card-content>
-                        <br>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <p>R$ 300,00</p>
-                        <button type="button" class="btn btn-outline-primary">Comprar</button>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
+                <mat-card-content class="mat-mdc-card-content">
+                    <br>
+                </mat-card-content>
+                <mat-card-actions class="mat-mdc-card-actions mdc-card__actions">
+                    <p>{{produto.preco | currency : 'BRL'}}</p>
+                    <button type="button" class="btn btn-outline-primary">Comprar</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </section>
 </main>

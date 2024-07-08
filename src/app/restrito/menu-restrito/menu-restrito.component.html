@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span><a routerLink="/restrito/lista">Listar Produtos</a></span>
+        <span><a routerLink="/restrito/cadastro">Cadastrar Produto</a></span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+            (click)="logout()">
+            <span class="material-icons">logout</span>
+        </button>
+    </mat-toolbar-row>
+
+
+    <div id="menu-mobile">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <img _ngcontent-aor-c32="" src="../../assets/img/hamburger-icon.svg" alt="menu">
+        </button>
+        
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/restrito/lista">
+                <span class="material-icons">list</span>
+                <span>Listar Produtos</span>
+            </button>
+
+            <button mat-menu-item routerLink="/restrito/cadastro">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                <span>Cadastrar Produto</span>
+            </button>
+            
+            <button mat-menu-item (click)="logout()">
+                <span class="material-icons">logout</span>
+                <span>Logout</span>
+            </button>
+        </mat-menu> 
+    </div>
+</mat-toolbar>
