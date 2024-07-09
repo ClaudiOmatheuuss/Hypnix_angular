@@ -4,6 +4,8 @@ Este projeto foi criado com intuito de ser a solução de um desafio que recebi 
 no qual fui desafiado a recriar o <a href="https://github.com/ClaudiOmatheuuss/HYPNIX">HYPNIX</a> , porém, em Angular usando a biblioteca Angular Material, bootstrap 
 e com funcionalidades específicas. 
 
+DEPLOY ALTERNATIVO: https://hypnix.netlify.app/
+
 Nesse projeto você pode:
 
   - desfrutar da landing page inicial e páginas de alta performance e responsivas;
